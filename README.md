@@ -21,7 +21,7 @@ Through HeartLink, users are empowered to reduce waste, embrace minimalism, and 
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•	As a receiver, can claim the item from a donar, send/receive messages.
 
 
-3.Architecture 🤔
+3.Architecture 💡
 
 &nbsp;&nbsp;&nbsp;&nbsp;Technologies Used:
 
