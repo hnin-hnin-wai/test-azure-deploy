@@ -50,9 +50,11 @@ ER Diagram
 
 <img width="1000" alt="architecture-v1" src="https://github.com/user-attachments/assets/4dfd4fb1-884d-4c00-92f3-ff0db315e53d">
 
-Local installation
-  1.	Set up database connection in application.properties
-  2.	And then run application
+  &nbsp;&nbsp;&nbsp;&nbsp;Local installation
+
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. Set up database connection in application.properties
+  
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. And then run application
 
 4. Deployment in Azure 🚀
 
