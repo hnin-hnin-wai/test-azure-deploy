@@ -10,8 +10,7 @@ Through HeartLink, users are empowered to reduce waste, embrace minimalism, and 
 
 Architecture
 
-<img width="1000" alt="architecture-v1" src="https://github.com/user-attachments/assets/38637c5f-610b-418f-81e2-8406d3865676">
-
+<img width="1000" alt="azureDeployment-v2" src="https://github.com/user-attachments/assets/be55ff0b-3027-4aed-90f5-d324f0b732a0">
 
 Class Diagram
 
