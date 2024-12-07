@@ -3,7 +3,7 @@ package edu.miu.cse.heartlink.service.impl;
 import edu.miu.cse.heartlink.dto.request.ConversationRequestDto;
 import edu.miu.cse.heartlink.dto.request.MessageRequestDto;
 import edu.miu.cse.heartlink.dto.response.ConversationResponseDto;
-import edu.miu.cse.heartlink.mapper.ConversationMapper;
+
 import edu.miu.cse.heartlink.model.Conversation;
 import edu.miu.cse.heartlink.model.Item;
 import edu.miu.cse.heartlink.model.Message;
@@ -29,7 +29,7 @@ public class ConversationServiceImpl implements ConversationService {
     private final ConversationRepository conversationRepository;
     private final UserRepository userRepository;
     private final ItemRepository itemRepository;
-    private final ConversationMapper conversationMapper;
+
 
     @Override
     public Optional<ConversationResponseDto> createConversation(ConversationRequestDto conversationRequestDto) {

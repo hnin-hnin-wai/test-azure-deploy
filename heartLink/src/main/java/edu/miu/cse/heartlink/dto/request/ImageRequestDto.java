@@ -10,6 +10,5 @@ public record ImageRequestDto(
         Integer itemId,
         byte[] imageBytes,
         String fileName
-       // ,List<Image> images
 ) {
 }

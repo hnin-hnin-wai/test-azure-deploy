@@ -159,10 +159,6 @@ public class ItemServiceImpl implements ItemService {
         // Delete existing images from S3 and database
         existingImages.forEach(existingImage -> {
 
-            System.out.println("ExistingImageURL ::::"+existingImage.getUrl());
-            // Extract the S3 key from the URL
-            // String s3Key = "items/" + itemId + "/" + existingImage.getUrl().substring(existingImage.getUrl().lastIndexOf("/") + 1);
-
             // Extract the filename from the URL (including the timestamp)
             String fileNameWithTimestamp = existingImage.getUrl().substring(existingImage.getUrl().lastIndexOf("/") + 1);
             System.out.println("FileNameWithTimestamp" + fileNameWithTimestamp);

@@ -29,6 +29,4 @@ public class Category {
                 "name='" + name + '\'' +
                 '}';
     }
-
-    // Furniture,Electronics,Fashion,Accessories,Food,PetSupplies,Other
 }

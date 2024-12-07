@@ -12,8 +12,6 @@ import java.util.Optional;
 
 @Repository
 public interface ConversationRepository extends JpaRepository<Conversation, Integer> {
-//    List<ConversationResponseDto> findByReceiverOrderByCreatedDate(Integer userId);
-//    List<ConversationResponseDto> findBySender(Integer userId);
 
     @Query("SELECT c FROM conversations c WHERE c.sender.id = :senderId AND c.receiver.id = :receiverId AND c.item.id = :itemId")
     Optional<Conversation> findBySenderReceiverAndItem(@Param("senderId") Integer senderId, @Param("receiverId") Integer receiverId, @Param("itemId") Integer itemId);

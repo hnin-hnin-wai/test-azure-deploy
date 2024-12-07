@@ -14,10 +14,5 @@ public interface ConversationService {
     //get conversation
     Optional<ConversationResponseDto> findConversationByConversationId (Integer conversationId);
 
-    //create Conversation - send message
-//    Optional<ConversationResponseDto> sendMessage(ConversationRequestDto conversationRequestDto);
-//
-//    //get Conversation - receive message
-//    Optional<ConversationResponseDto> receiveMessage(Integer conversationId);
 
 }

@@ -3,7 +3,6 @@ package edu.miu.cse.heartlink.service.impl;
 import edu.miu.cse.heartlink.dto.request.CategoryRequestDto;
 import edu.miu.cse.heartlink.dto.response.CategoryResponseDto;
 import edu.miu.cse.heartlink.exception.category.CategoryNotFoundException;
-import edu.miu.cse.heartlink.mapper.CategoryMapper;
 import edu.miu.cse.heartlink.model.Category;
 import edu.miu.cse.heartlink.repository.CategoryRepository;
 import edu.miu.cse.heartlink.service.CategoryService;
@@ -20,7 +19,7 @@ import java.util.Optional;
 public class CategoryServiceImpl implements CategoryService {
 
     private final CategoryRepository categoryRepository;
-   // private final CategoryMapper categoryMapper;
+
 
     @Override
     public Optional<CategoryResponseDto> createCategory(CategoryRequestDto categoryRequestDto) {
@@ -29,8 +28,6 @@ public class CategoryServiceImpl implements CategoryService {
         Category savedCategory=categoryRepository.save(category);
         CategoryResponseDto categoryResponseDto=new CategoryResponseDto(savedCategory.getId(),savedCategory.getName());
         return Optional.of(categoryResponseDto);
-        //Category savedCategory=categoryRepository.save(CategoryMapper.INSTANCE.categoryRequestDtoToCategory(categoryRequestDto));
-       // return Optional.of(CategoryMapper.INSTANCE.categoryToCategoryResponseDto(savedCategory));
     }
 
     @Override

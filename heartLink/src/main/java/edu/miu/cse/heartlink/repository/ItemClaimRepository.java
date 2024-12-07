@@ -12,7 +12,6 @@ import java.util.List;
 @Repository
 public interface ItemClaimRepository extends JpaRepository<ItemClaim, Integer> {
 
-    // Custom query to find requests by itemId
     @Query("SELECT ir FROM itemrequests ir WHERE ir.item.id = :itemId")
     List<ItemClaim> findByItemId(@Param("itemId") long itemId);
 

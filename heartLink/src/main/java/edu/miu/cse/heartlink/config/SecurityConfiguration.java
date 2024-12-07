@@ -16,7 +16,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 @Configuration
 @EnableWebSecurity
-@EnableMethodSecurity//we discuss it tomorrow
+@EnableMethodSecurity
 @RequiredArgsConstructor
 public class SecurityConfiguration {
 
@@ -37,13 +37,6 @@ public class SecurityConfiguration {
                                         .requestMatchers("api/v1/itemtransactions/**").hasAnyRole(Role.ADMIN.name(),Role.MEMBER.name())
                                         .requestMatchers("api/v1/conversations/**").hasAnyRole(Role.ADMIN.name(),Role.MEMBER.name())
                                         .requestMatchers("api/v1/messages/**").hasAnyRole(Role.ADMIN.name(),Role.MEMBER.name())
-
-//                                        .requestMatchers("/api/v1/admin/**").hasRole(Role.ADMIN.name())
-//                                        .requestMatchers("/api/v1/management/**").hasAnyRole(Role.ADMIN.name(),Role.MEMBER.name())
-//                                        .requestMatchers("api/v1/management/member-only").hasAnyAuthority(
-//                                                Permission.MEMBER_READ.getPermission(),
-//                                                Permission.MEMBER_WRITE.getPermission()
-//                                        )
                                         .anyRequest()
                                         .authenticated()
                 ).authenticationProvider(authenticationProvider)

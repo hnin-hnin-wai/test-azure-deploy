@@ -45,11 +45,8 @@ public class AuthenticationService {
                         authenticationRequest.password()
                 )
         );
-        //Now authentication is successfully
-        //Next, generate token for this authenticated user
-//        Principal principal = authentication.getPrincipal();
+
         User user = (User)authentication.getPrincipal();
-//        User user = (User) userDetailsService.loadUserByUsername(authenticationRequest.username());
         String token = jwtService.generateToken(user);
         return new AuthenticationResponse(token);
     }

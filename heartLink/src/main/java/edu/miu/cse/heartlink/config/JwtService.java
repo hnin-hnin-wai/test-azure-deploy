@@ -62,33 +62,17 @@ public class JwtService {
     private Claims extractClaims(String token) {
         try {
 
-//                        return Jwts.parser() // Use parser directly in 0.12.6
-//                    .setSigningKey(SECRET.getBytes(StandardCharsets.UTF_8))
-//                                .build()// Set the signing key
-//                    .parseClaimsJws(token) // Parse the JWT
-//                    .getBody(); // Extract claims (payload)
-
             return Jwts.parser().setSigningKey(SECRET).build().parseSignedClaims(token).getBody();
-//            return Jwts.parser()
-//            .setSigningKey(Keys.hmacShaKeyFor(Decoders.BASE64.decode(SECRET)))
-//                    .build().parseClaimsJws(token).getBody();
 
         } catch (JwtException e) {
             throw new RuntimeException("Invalid JWT token", e);
         }
     }
 
-
-
-//    public boolean isTokenValid(String token, UserDetails userDetails) {
-//        final String username = extractUsername(token);
-//        return (username.equals(userDetails.getUsername()) && !isTokenExpired(token));
-//    }
 public boolean isTokenValid(String token, UserDetails userDetails) {
     final String username = extractUsername(token);
     boolean isNotExpired = !isTokenExpired(token);
     boolean isNotBlacklisted = !tokenBlacklistService.isTokenBlacklisted(token); // Check blacklist
-    System.out.println("Data::::"+ (username.equals(userDetails.getUsername()) && isNotExpired && isNotBlacklisted));
     return (username.equals(userDetails.getUsername()) && isNotExpired && isNotBlacklisted);
 }
 
@@ -101,38 +85,4 @@ public boolean isTokenValid(String token, UserDetails userDetails) {
         return extractClaims(token).getExpiration().before(new Date());
     }
 
-
-
-
-
-    // Extract username from the JWT token
-//    public String extractUsername(String token) {
-//        return extractClaims(token).getSubject();
-//    }
-//
-//    // Check if the token is expired
-//    public boolean isTokenExpired(String token) {
-//        return extractClaims(token).getExpiration().before(new Date());
-//    }
-//
-//    private Claims extractClaims(String token) {
-//        try {
-//            return Jwts.parserBuilder()
-//                    .setSigningKey(SECRET.getBytes(StandardCharsets.UTF_8))
-//                    .build()
-//                    .parseClaimsJws(token)
-//                    .getBody();
-//        } catch (JwtException e) {
-//            throw new RuntimeException("Invalid JWT token", e);
-//        }
-//    }
-//
-//    // Token validation logic
-//    public boolean isTokenValid(String token, UserDetails userDetails) {
-//        final String username = extractUsername(token);
-//        boolean isNotExpired = !isTokenExpired(token);
-//        boolean isNotBlacklisted = !tokenBlacklistService.isTokenBlacklisted(token); // Assuming a separate blacklist service
-//        return (username.equals(userDetails.getUsername()) && isNotExpired && isNotBlacklisted);
-//    }
-//
 }
